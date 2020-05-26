@@ -1,0 +1,212 @@
+@mixin basic-box-shadow($color) {
+  box-shadow: 3px 3px 5px 5px $color, 1px 0px 1px $color;
+}
+
+$main-color: black;
+$accent-color: darken($main-color, 10%);
+$background-color: lighten($main-color, 40%);
+
+// LAYOUT
+
+body {
+  background-color: $background-color;
+  color: $main-color;
+  height: 97vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// COMPONENTS
+.card {
+  background: white;
+  height: 50vh;
+  width: 50vw;
+  border-radius: 15px;
+  margin-top: 15px;
+  @include basic-box-shadow($accent-color);
+}
+
+// TYPOGRAPHY
+h2 {
+  font-size: 3rem;
+}
+
+
+
+
+
+/// CSS MASONRY SKELETON
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1.618;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+code, pre, samp {
+  font-family: monospace;
+}
+
+/**
+ * BASIC TYPE
+ */
+
+img, video {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+p:not(:last-child) {
+  margin: 0 0 1em;
+}
+
+h1, h2, h3, h4 {
+  margin: .5em 0 .75em;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+h3 {
+  font-size: 1.125em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+/**
+ * BOX HACKING
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.wrapper { 
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.5em;
+}
+body {
+  background-color: #cccccc;
+  color: #333333;
+}
+.masonry-wrapper {
+  padding: 1.5em;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.masonry {
+  columns: 1;
+  column-gap: 2px;
+}
+.masonry-item {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 2px;
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {  .masonry {
+    columns: 2;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    columns: 20;
+  }
+}
+.masonry-item, .masonry-content {
+  border-radius: 2px;
+  overflow: hidden;
+}
+.masonry-item {
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .3));
+  transition: filter .25s ease-in-out;
+}
+.masonry-item:hover {
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .3));
+}
+.masonry-footer {
+  font-size: .75em;
+  opacity: .25;
+  text-align: center;
+  padding-top: 3em; 
+  padding-bottom: 3em;
+  margin-bottom: -1.5em;
+  transition: opacity 1s ease-in-out;
+}
+.masonry-footer a {
+  color: currentColor;
+}
+.masonry-footer:hover, .masonry-footer:active, .masonry-footer:focus {
+  opacity: .75;
+}
