@@ -34,3 +34,8 @@ req.addEventListener("load", function () {
         document.getElementById("explanation").textContent = response.explanation;
     }
 })
+
+
+//https://api.nasa.gov/planetary/apod?api_key=jCtm12h0wkSlQxOdyQNJKvaLCe0ZJMG7EzTZ28N1&count=100
+
+//https://open.nasa.gov/blog/explore-brand-new-updates-astronomy-picture-day-apod-api/
